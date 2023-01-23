@@ -1,0 +1,56 @@
+<p class="text-3xl font-bold">
+  Ship entry
+</p>
+
+<div class="flex flex-col p-8 pb-4 bg-white rounded-2xl shadow mt-5">
+  <form *ngIf="form" [formGroup]="form">
+    <div class="flex flex-col md:flex-row w-full">
+      <mat-form-field class="md:w-1/2 md:pr-3">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name">
+        <mat-error *ngIf="form.controls['name'].hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="md:w-1/2">
+        <mat-label>Code</mat-label>
+        <input type="text" matInput formControlName="code" placeholder="AAAA-1111-A1" mask="SSSS-0000-S0"
+          [clearIfNotMatch]="true" [dropSpecialCharacters]="false">
+        <mat-error *ngIf="form.controls['code'].hasError('required')">
+          Code is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-col md:flex-row w-full">
+      <mat-form-field class="md:w-1/2 md:pr-3">
+        <mat-label>Length</mat-label>
+        <input type="number" matInput formControlName="length">
+        <mat-error *ngIf="form.controls['length'].hasError('required')">
+          Length is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="md:w-1/2">
+        <mat-label>Width</mat-label>
+        <input type="number" matInput formControlName="width">
+        <mat-error *ngIf="form.controls['width'].hasError('required')">
+          Width is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-row mt-3 justify-center sm:justify-end gap-x-3">
+      <button mat-flat-button color="primary" (click)="redirectToList()">
+        <mat-icon class="mr-2">arrow_back</mat-icon>
+        Back
+      </button>
+
+      <button mat-flat-button color="primary" (click)="save()">
+        <mat-icon class="mr-2">save</mat-icon>
+        Save
+      </button>
+    </div>
+  </form>
+</div>

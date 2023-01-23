@@ -1,0 +1,11 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Omoqo.Challenge.Api.Core.Data;
+global using Omoqo.Challenge.Api.Core.Entities;
+global using Omoqo.Challenge.Api.Core.Interfaces.Data;
+global using Omoqo.Challenge.Api.Core.Interfaces.Repositories;
+global using Omoqo.Challenge.Api.Core.Interfaces.Services;
+global using Omoqo.Challenge.Api.Core.Models;
+global using Omoqo.Challenge.Api.Core.Models.Base;
+global using Omoqo.Challenge.Api.Core.Repositories;
+global using Omoqo.Challenge.Api.Core.Services;
+global using Xunit;
